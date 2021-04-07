@@ -14,11 +14,13 @@ app.use(cors());
 app.options("*", cors());
 app.use(express.json());
 
-app.use("/", (req, res) => {
-  res.sendFile(path.join(__dirname + 'send.html'));
-})
+
 
 app.use("/api", routes);
+
+app.use("/", (req, res) => {
+  res.sendFile(path.join(__dirname + '/send.html'));
+})
 
 mongoose
   .connect(
