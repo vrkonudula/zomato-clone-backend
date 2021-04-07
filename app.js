@@ -5,7 +5,6 @@ const cors = require("cors");
 var path = require("path");
 
 const port = process.env.PORT || 2020;
-const host = "localhost";
 const routes = require("./router/routes");
 
 const app = express();
@@ -28,8 +27,8 @@ mongoose
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then((res) => {
-    app.listen(port, host, () => {
-      console.log(`Server Running at - ${host}:${port}`);
+    app.listen(port, () => {
+      console.log(`Server Running at - ${port}`);
     });
   })
   .catch((err) => {
